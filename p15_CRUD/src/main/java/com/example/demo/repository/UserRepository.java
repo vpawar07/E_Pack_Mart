@@ -40,6 +40,4 @@ public interface UserRepository extends JpaRepository<User, Integer> {
 	@Query("update Company c set c.msme_cert_no = :msme_cert_no, c.gst_no=:gst_no, c.user_id = :user_id where c.company_id=:comp_id")
 	public int updateComp(int comp_id, String msme_cert_no, String gst_no, User user_id);
 	
-	
-	
 }
