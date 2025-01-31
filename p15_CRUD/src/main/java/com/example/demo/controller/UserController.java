@@ -81,9 +81,26 @@ public class UserController {
 		
 	}
 	
-	@PutMapping("/updateCompany/{userId}")
+	@GetMapping("/getU/{comp}")
+	public User getU(@PathVariable int comp) {
+		return userserv.getU(comp);
+	}
+	
+	
+	@PutMapping("/updateCompany/{compId}")
 	public int updateUser(@PathVariable int compId,@RequestBody UserHelper u) {
 		return userserv.updateComp(compId, u.getEmail(), u.getName(), u.getPassword(), u.getCity(), u.getAddress(), u.getPancard(), u.getRole_id(), u.getMsme_cert_no(), u.getGst_no());
 		
 	}
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 }
