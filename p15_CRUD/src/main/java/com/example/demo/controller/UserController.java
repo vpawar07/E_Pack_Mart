@@ -64,14 +64,11 @@ public class UserController {
 		c.setMsme_cert_no(comp.getMsme_cert_no());
 		c.setGst_no(comp.getGst_no());
 		c.setUser_id(u);
-//		return companyserv.saveComp(c);
 		
 	}
 	
 	@PostMapping("/login")
 	public User login(@RequestBody LoginHelper lhelp) {
-//		System.out.println("hi");
-//		System.out.println(lhelp);
 		return userserv.loginCheck(lhelp);
 	}
 	
