@@ -19,6 +19,8 @@ public interface UserRepository extends JpaRepository<User, Integer> {
 //	@Query("select u from User u where u.email = :email_id and u.password = :pwd")
 //	@Query("From User where email= ?1and password= ?2")
 	
+	
+	
 	@Query("select u from User u where u.email = :email_id and u.password = :pwd")
 	public Optional<User> loginCheck(String email_id, String pwd);
 	
@@ -28,14 +30,16 @@ public interface UserRepository extends JpaRepository<User, Integer> {
 	public int updateUser(int user_id, String email, String name, String password, City city_id, String address, String pancard, Role role_id);
 	
 	
-	@Transactional
-	@Modifying
-	@Query("select user_id from Company c where c.comp_id = :comp_id")
-	public int getUserIdByComp(int comp_id);
+	
+	@Query("select c.user_id from Company c where c.company_id = :comp_id")
+	public Optional<User> getUserIdByComp(int comp_id);
 	
 	
 	@Transactional
 	@Modifying
-	@Query("update Company c set c.msme_cert_no = :msme_cert_no, c.gst_no=:gst_no, c.user_id = :user_id")
+	@Query("update Company c set c.msme_cert_no = :msme_cert_no, c.gst_no=:gst_no, c.user_id = :user_id where c.company_id=:comp_id")
 	public int updateComp(int comp_id, String msme_cert_no, String gst_no, User user_id);
+	
+	
+	
 }
