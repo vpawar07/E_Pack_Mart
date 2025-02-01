@@ -17,4 +17,8 @@ public class CategoryService {
 	public List<Category> getAllCategories(){
 		return catrepo.findAll();
 	}
+	
+	public Category addCategory(Category cat) {
+		return catrepo.save(cat);
+	}
 }
