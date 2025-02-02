@@ -18,7 +18,7 @@ import com.example.demo.entity.User;
 import com.example.demo.service.CompanyService;
 import com.example.demo.service.UserService;
 
-@CrossOrigin(origins = "http://localhost:3000")
+@CrossOrigin(origins = "http://localhost:3015")
 @RestController
 public class UserController {
 
@@ -69,13 +69,13 @@ public class UserController {
 	
 	@PostMapping("/login")
 	public User login(@RequestBody LoginHelper lhelp) {
+		System.out.println(lhelp);
 		return userserv.loginCheck(lhelp);
 	}
 	
 	@PutMapping("/updateCustomer/{userId}")
 	public int updateCust(@PathVariable int userId,@RequestBody User u) {
 		return userserv.updateCustomer(userId, u.getEmail(), u.getName(), u.getPassword(), u.getCity(), u.getAddress(), u.getPancard(), u.getRole_id());
-		
 	}
 	
 	@GetMapping("/getU/{comp}")

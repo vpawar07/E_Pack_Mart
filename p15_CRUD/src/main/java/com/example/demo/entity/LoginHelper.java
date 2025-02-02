@@ -1,33 +1,28 @@
 package com.example.demo.entity;
 
 public class LoginHelper {
-
-	String email_id;
+	
+	String email;
 	
 	String password;
 
-	
 	public LoginHelper() {
 		super();
 		// TODO Auto-generated constructor stub
 	}
-	
-	
 
-	public LoginHelper(String email_id, String password) {
+	public LoginHelper(String email, String password) {
 		super();
-		this.email_id = email_id;
+		this.email = email;
 		this.password = password;
 	}
 
-
-
-	public String getEmail_id() {
-		return email_id;
+	public String getEmail() {
+		return email;
 	}
 
-	public void setEmail_id(String email_id) {
-		this.email_id = email_id;
+	public void setEmail(String email) {
+		this.email = email;
 	}
 
 	public String getPassword() {
@@ -38,12 +33,11 @@ public class LoginHelper {
 		this.password = password;
 	}
 
-
-
 	@Override
 	public String toString() {
-		return "LoginHelper [email_id=" + email_id + ", password=" + password + "]";
+		return "LoginHelper [email=" + email + ", password=" + password + "]";
 	}
+	
 	
 	
 }
