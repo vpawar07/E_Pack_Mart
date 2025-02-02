@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
@@ -19,7 +20,7 @@ import com.example.demo.entity.CompanyProduct;
 import com.example.demo.service.CompProdService;
 import com.example.demo.service.CompanyService;
 
-@CrossOrigin(origins = "http://localhost:3000")
+@CrossOrigin(origins = "http://localhost:3015")
 @RestController
 public class CompProdController {
 
@@ -52,12 +53,18 @@ public class CompProdController {
 	public boolean uploadImage(@PathVariable("cpid") int cpid,@RequestBody MultipartFile productImage) throws IllegalStateException, IOException {
 		boolean flag = true;
 		try {
-			flag = cpserv.upload(cpid, productImage.getBytes());
+			flag = cpserv.uploadImage(cpid, productImage.getBytes());
 		}
 		catch(Exception e) {
 			flag = false;
 		}
 		return flag;
+	}
+	
+	
+	@PutMapping("/updateCampProd/{cpid}")
+	public void updateCampProd(@RequestBody CompanyProduct cp) {
+		cpserv.updateCompProd(cp);
 	}
 
 	

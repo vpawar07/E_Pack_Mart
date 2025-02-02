@@ -28,14 +28,16 @@ public class UserService {
 	
 	public User loginCheck(LoginHelper obj) {
 		System.out.println(obj);
-		User u;
-		Optional<User> ol = userrepo.loginCheck(obj.getEmail_id(), obj.getPassword());
-		try {
-			u = ol.get();
-		}
-		catch(Exception e){
-			u = null;
-		}
+		
+		User u= userrepo.loginCheck(obj.getEmail(), obj.getPassword());
+//		System.out.println(ol);
+//		try {
+//			u = ol.get();
+//		}
+//		catch(Exception e){
+//			u = null;
+//		}
+		System.out.println(u);
 		return u;
 	}
 	

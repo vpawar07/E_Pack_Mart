@@ -25,7 +25,7 @@ public class CompProdService {
 	}
 	
 	@Transactional
-	public boolean upload(int id, byte [] photo) {
+	public boolean uploadImage(int id, byte [] photo) {
 		System.out.println("Heloooooooooo");
 		
 		int count= cprepo.uploadPhoto(id, photo);
@@ -34,5 +34,9 @@ public class CompProdService {
 			 return true;
 		 else
 			 return false;
+	}
+	
+	public int  updateCompProd(CompanyProduct cp) {
+		return cprepo.updateProdComp(cp.getComp_prod_id(), cp.getProduct_id(), cp.getCompany_id(),cp.getProd_weight(), cp.getProd_size(), cp.getMaterial_type(), cp.getProd_description(), cp.getStock(), cp.getProd_price(), cp.getProd_shape(), cp.getProd_design_type(), cp.getProd_color(), cp.getBox_capacity(), cp.getMaterial_thickness(), cp.getClosure_type());
 	}
 }
