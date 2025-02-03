@@ -15,7 +15,7 @@ import com.example.demo.service.CategoryService;
 @CrossOrigin(origins = "http://localhost:3015")
 @RestController
 public class CatagoryController {
-
+ 
 	@Autowired
 	CategoryService catserv;
 	
