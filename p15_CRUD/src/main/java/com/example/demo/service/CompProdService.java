@@ -27,9 +27,11 @@ public class CompProdService {
 	@Transactional
 	public boolean uploadImage(int id, byte [] photo) {
 		System.out.println("Heloooooooooo");
-		
+		System.out.println(photo.length);
 		int count= cprepo.uploadPhoto(id, photo);
+		
 		System.out.println("Count is :"+count);
+		
 		 if(count==1)
 			 return true;
 		 else

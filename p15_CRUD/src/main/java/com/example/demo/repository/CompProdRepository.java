@@ -16,7 +16,7 @@ import jakarta.transaction.Transactional;
 public interface CompProdRepository extends JpaRepository<CompanyProduct, Integer> {
 
 	@Modifying
-	@Query("update CompanyProduct c set c.prod_image= ?2 where c.comp_prod_id = ?1")
+	@Query(value = "UPDATE company_product SET prod_image = :file WHERE comp_prod_id = :id", nativeQuery = true)
 	public int uploadPhoto(int id, byte [] file);
 	
 	
