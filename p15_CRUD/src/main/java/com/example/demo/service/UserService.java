@@ -28,14 +28,16 @@ public class UserService {
 	
 	public User loginCheck(LoginHelper obj) {
 		System.out.println(obj);
-		User u;
-		Optional<User> ol = userrepo.loginCheck(obj.getEmail_id(), obj.getPassword());
-		try {
-			u = ol.get();
-		}
-		catch(Exception e){
-			u = null;
-		}
+		
+		User u= userrepo.loginCheck(obj.getEmail(), obj.getPassword());
+//		System.out.println(ol);
+//		try {
+//			u = ol.get();
+//		}
+//		catch(Exception e){
+//			u = null;
+//		}
+		System.out.println(u);
 		return u;
 	}
 	
@@ -45,7 +47,6 @@ public class UserService {
 	}
 	
 	public User getU(int uid) {
-//		return userrepo.getUserIdByComp(uid);
 		User u;
 		Optional<User> ol = userrepo.getUserIdByComp(uid);
 		try {
@@ -60,7 +61,6 @@ public class UserService {
 	public int updateComp(int comp_id, String email, String name, String password, City city_id, String address, String pancard, Role role_id, String msme_cert_no, String gst_no) {
 		User user_id= getU(comp_id);
 		userrepo.updateUser(user_id.getUser_id(), email, name, password, city_id, address, pancard, role_id);
-		//Optional<User> u = userrepo.findById(user_id.getUser_id());
 		return userrepo.updateComp(comp_id, msme_cert_no, gst_no, user_id);
 	}
 }

@@ -5,12 +5,15 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.example.demo.entity.Product;
 import com.example.demo.service.ProductService;
 
-@CrossOrigin(origins = "http://localhost:3000")
+@CrossOrigin(origins = "http://localhost:3015")
 @RestController
 public class ProductController {
 
@@ -20,6 +23,11 @@ public class ProductController {
 	@GetMapping("/getAllProducts")
 	public List<Product> getAllProducts(){
 		return prodserv.getAllProducts();
+	}
+	
+	@PostMapping("/addProduct")
+	public Product addProduct(@RequestBody Product p) {
+		return prodserv.addProduct(p);
 	}
 	
 }

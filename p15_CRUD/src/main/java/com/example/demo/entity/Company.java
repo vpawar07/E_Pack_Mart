@@ -70,5 +70,4 @@ public class Company {
 		this.user_id = user_id;
 	}
 	
-	
 }

@@ -18,7 +18,7 @@ import com.example.demo.entity.User;
 import com.example.demo.service.CompanyService;
 import com.example.demo.service.UserService;
 
-@CrossOrigin(origins = "http://localhost:3000")
+@CrossOrigin(origins = "http://localhost:3015")
 @RestController
 public class UserController {
 
@@ -64,21 +64,18 @@ public class UserController {
 		c.setMsme_cert_no(comp.getMsme_cert_no());
 		c.setGst_no(comp.getGst_no());
 		c.setUser_id(u);
-//		return companyserv.saveComp(c);
 		
 	}
 	
 	@PostMapping("/login")
 	public User login(@RequestBody LoginHelper lhelp) {
-//		System.out.println("hi");
-//		System.out.println(lhelp);
+		System.out.println(lhelp);
 		return userserv.loginCheck(lhelp);
 	}
 	
 	@PutMapping("/updateCustomer/{userId}")
 	public int updateCust(@PathVariable int userId,@RequestBody User u) {
 		return userserv.updateCustomer(userId, u.getEmail(), u.getName(), u.getPassword(), u.getCity(), u.getAddress(), u.getPancard(), u.getRole_id());
-		
 	}
 	
 	@GetMapping("/getU/{comp}")
