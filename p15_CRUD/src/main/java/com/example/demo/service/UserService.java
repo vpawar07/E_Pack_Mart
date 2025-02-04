@@ -10,6 +10,7 @@ import com.example.demo.entity.City;
 import com.example.demo.entity.LoginHelper;
 import com.example.demo.entity.Role;
 import com.example.demo.entity.User;
+import com.example.demo.repository.CompanyRepository;
 import com.example.demo.repository.UserRepository;
 
 @Service
@@ -17,6 +18,9 @@ public class UserService {
 	
 	@Autowired
 	UserRepository userrepo;
+	
+	@Autowired
+	CompanyRepository comprepo;
 	
 	public List<User> getAllUser(){
 		return userrepo.findAll();
@@ -26,17 +30,14 @@ public class UserService {
 		return userrepo.save(cust);
 	}
 	
-	public User loginCheck(LoginHelper obj) {
+	public Object loginCheck(LoginHelper obj) {
 		System.out.println(obj);
 		
 		User u= userrepo.loginCheck(obj.getEmail(), obj.getPassword());
-//		System.out.println(ol);
-//		try {
-//			u = ol.get();
-//		}
-//		catch(Exception e){
-//			u = null;
-//		}
+		if(u.getRole_id().getRole_id()==2) {
+			return comprepo.getCompanyByUserId(u.getUser_id());
+		}
+
 		System.out.println(u);
 		return u;
 	}
