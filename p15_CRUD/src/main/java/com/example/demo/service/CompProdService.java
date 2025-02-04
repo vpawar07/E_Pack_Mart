@@ -1,6 +1,7 @@
 package com.example.demo.service;
 
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -39,6 +40,19 @@ public class CompProdService {
 	}
 	
 	public int  updateCompProd(CompanyProduct cp) {
+		System.out.println(cp.getComp_prod_id()+" "+ cp.getProduct_id()+" "+ cp.getCompany_id()+" "+cp.getProd_weight()+" "+cp.getProd_size()+" "+cp.getMaterial_type()+" "+cp.getProd_description()+" "+cp.getStock()+" "+cp.getProd_price()+" "+cp.getProd_shape()+" "+cp.getProd_design_type()+" "+cp.getProd_color()+" "+cp.getBox_capacity()+" "+cp.getMaterial_thickness()+" "+cp.getClosure_type());
 		return cprepo.updateProdComp(cp.getComp_prod_id(), cp.getProduct_id(), cp.getCompany_id(),cp.getProd_weight(), cp.getProd_size(), cp.getMaterial_type(), cp.getProd_description(), cp.getStock(), cp.getProd_price(), cp.getProd_shape(), cp.getProd_design_type(), cp.getProd_color(), cp.getBox_capacity(), cp.getMaterial_thickness(), cp.getClosure_type());
+	}
+	
+	public List<CompanyProduct> getCompProdByCompId(int compId){
+		return cprepo.getCompProdByCompId(compId);
+	}
+	
+	public int deleteCompProd(int compProdId) {
+		return cprepo.deleteCompProd(compProdId);
+	}
+	
+	public Optional<CompanyProduct> getProductById(int compProdId) {
+		return cprepo.findById(compProdId);
 	}
 }

@@ -68,7 +68,7 @@ public class UserController {
 	}
 	
 	@PostMapping("/login")
-	public User login(@RequestBody LoginHelper lhelp) {
+	public Object login(@RequestBody LoginHelper lhelp) {
 		System.out.println(lhelp);
 		return userserv.loginCheck(lhelp);
 	}

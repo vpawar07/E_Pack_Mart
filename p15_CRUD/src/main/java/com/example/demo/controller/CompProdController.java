@@ -3,9 +3,11 @@ package com.example.demo.controller;
 import java.io.File;
 import java.io.IOException;
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -71,8 +73,25 @@ public class CompProdController {
 	
 	@PutMapping("/updateCampProd/{cpid}")
 	public void updateCampProd(@RequestBody CompanyProduct cp) {
+		System.out.println("updateCampProd api call");
 		cpserv.updateCompProd(cp);
 	}
 
 	
+	@GetMapping("/getCompProdByCompId/{compId}")
+	public List<CompanyProduct> getCompProdByCompId(@PathVariable int compId) {
+		System.out.println("getCompProdByCompId called"+compId);
+		return cpserv.getCompProdByCompId(compId);
+	}
+	
+	@DeleteMapping("/deleteCompProd/{compProdId}")
+	public int deleteCompProd(@PathVariable int compProdId) {
+		return cpserv.deleteCompProd(compProdId);
+	}
+	
+	@GetMapping("/getProductById/{cpid}")
+	public Optional<CompanyProduct> getProductById(@PathVariable int cpid) {
+		System.out.println("getProductById is called "+cpid);
+		return cpserv.getProductById(cpid);
+	}
 }
