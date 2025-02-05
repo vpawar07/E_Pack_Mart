@@ -5,6 +5,7 @@ namespace E_PackMart.Models
 {
     public partial class Cart
     {
+        //cart
         public Cart()
         {
             OrderItems = new HashSet<OrderItem>();
