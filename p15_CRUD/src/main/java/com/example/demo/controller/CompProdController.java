@@ -3,9 +3,11 @@ package com.example.demo.controller;
 import java.io.File;
 import java.io.IOException;
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -35,25 +37,32 @@ public class CompProdController {
 	@PostMapping("/insertProduct")
 	public CompanyProduct saveCompProd(@RequestBody CompanyProduct cp) {
 		System.out.println("Ok");
-//        CompanyProduct product = new CompanyProduct();
-//        product.setCompany_id(cp.getCompany_id());
-//        product.setProduct_id(cp.getProduct_id());
-//        product.setMaterial_type(cp.getMaterial_type());
-//        product.setProd_description(cp.getProd_description());
-//        product.setProd_price(cp.getProd_price());
-//        product.setProd_size(cp.getProd_size());
-//        product.setProd_weight(cp.getProd_weight());
-//        product.setStock(cp.getStock());
+        CompanyProduct product = new CompanyProduct();
+        product.setCompany_id(cp.getCompany_id());
+        product.setProduct_id(cp.getProduct_id());
+        product.setMaterial_type(cp.getMaterial_type());
+        product.setProd_description(cp.getProd_description());
+        product.setProd_price(cp.getProd_price());
+        product.setProd_size(cp.getProd_size());
+        product.setProd_weight(cp.getProd_weight());
+        product.setStock(cp.getStock());
         //product.setImage_url(uploadDir + fileName);
         
         return cpserv.saveCompProd(cp);
 	}
 	
 	@PostMapping(value = "/uploadImage/{cpid}", consumes = "multipart/form-data")
-	public boolean uploadImage(@PathVariable("cpid") int cpid,@RequestBody MultipartFile productImage) throws IllegalStateException, IOException {
-		boolean flag = true;
+	public boolean uploadImage(@PathVariable("cpid") int cpid,@RequestParam("prod_image") MultipartFile prod_image) throws IllegalStateException, IOException {
+		System.out.println("Image called ="+cpid);
+		
+		if (prod_image == null || prod_image.isEmpty()) {
+	        System.out.println(" Error: No file received!");
+	        return false;
+	    }
+
+		boolean flag = false;
 		try {
-			flag = cpserv.uploadImage(cpid, productImage.getBytes());
+			flag = cpserv.uploadImage(cpid, prod_image.getBytes());
 		}
 		catch(Exception e) {
 			flag = false;
@@ -64,8 +73,25 @@ public class CompProdController {
 	
 	@PutMapping("/updateCampProd/{cpid}")
 	public void updateCampProd(@RequestBody CompanyProduct cp) {
+		System.out.println("updateCampProd api call");
 		cpserv.updateCompProd(cp);
 	}
 
 	
+	@GetMapping("/getCompProdByCompId/{compId}")
+	public List<CompanyProduct> getCompProdByCompId(@PathVariable int compId) {
+		System.out.println("getCompProdByCompId called"+compId);
+		return cpserv.getCompProdByCompId(compId);
+	}
+	
+	@DeleteMapping("/deleteCompProd/{compProdId}")
+	public int deleteCompProd(@PathVariable int compProdId) {
+		return cpserv.deleteCompProd(compProdId);
+	}
+	
+	@GetMapping("/getProductById/{cpid}")
+	public Optional<CompanyProduct> getProductById(@PathVariable int cpid) {
+		System.out.println("getProductById is called "+cpid);
+		return cpserv.getProductById(cpid);
+	}
 }

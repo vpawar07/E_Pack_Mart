@@ -1,13 +1,16 @@
 package com.example.demo.repository;
 
+import java.util.List;
 import java.util.Optional;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Modifying;
 import org.springframework.data.jpa.repository.Query;
+import org.springframework.data.repository.query.Param;
 import org.springframework.stereotype.Repository;
 
 import com.example.demo.entity.City;
+import com.example.demo.entity.Company;
 import com.example.demo.entity.Role;
 import com.example.demo.entity.User;
 
@@ -23,6 +26,8 @@ public interface UserRepository extends JpaRepository<User, Integer> {
 	
 	@Query("select u from User u where u.email = :email and u.password = :pwd")
 	public User loginCheck(String email, String pwd);
+	
+	
 	
 	@Transactional
 	@Modifying
