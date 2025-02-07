@@ -76,9 +76,10 @@ const Header = () => {
                       </li>
                       <li>
                         <a className="nav-link" href="#linkedin">
-                          LinkedIn
+                          LinkedIn...
                         </a>
                       </li>
+                      
                     </ul>
                   </div>
 
