@@ -31,11 +31,11 @@ const Navbar = () => {
   // Handle search functionality
   const handleSearch = (e) => {
     e.preventDefault();
-<<<<<<< HEAD
+
     console.log("e.target.tri", e.target.value.trim());
-=======
-    console.log("e.target.tri",e.target.value.trim())
->>>>>>> 15f1280bebeebd8753eef92c627eaee6a649f1be
+
+    console.log("e.target.tri", e.target.value.trim());
+
     dispatch(search(e.target.value.trim()));
     // }
   };
@@ -70,10 +70,7 @@ const Navbar = () => {
             <img
               src="https://via.placeholder.com/50" // Replace with your actual logo URL
               alt="Epackmart"
-<<<<<<< HEAD
               id="top"
-=======
->>>>>>> 15f1280bebeebd8753eef92c627eaee6a649f1be
               style={{ height: "40px", marginRight: "10px" }}
             />
             Epackmart

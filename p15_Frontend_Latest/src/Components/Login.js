@@ -57,11 +57,8 @@ const Login = () => {
       }
     } catch (error) {
       console.error("Error during login:", error);
-<<<<<<< HEAD
       setError("Server is down. Please try again later.");
-=======
       setError("An error occurred. Please try again later.");
->>>>>>> 15f1280bebeebd8753eef92c627eaee6a649f1be
     }
   };
 
