@@ -6,7 +6,10 @@ export default function SignInSignUpBtn() {
   const navigate = useNavigate();
 
   return (
-    <Card className="text-center p-3 mx-auto" style={{ width: "300px" }}>
+    <Card
+      className="text-center p-3 mx-auto"
+      style={{ width: "300px", marginTop: "200px" }}
+    >
       <Button
         variant="success"
         className="mb-2"
@@ -16,7 +19,7 @@ export default function SignInSignUpBtn() {
       </Button>
       <div>
         <span>
-          New customer? {" "}
+          New customer?{" "}
           <Link to="/register" className="text-primary">
             Start here
           </Link>
