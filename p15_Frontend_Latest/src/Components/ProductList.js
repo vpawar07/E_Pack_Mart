@@ -6,7 +6,7 @@ const ProductList = () => {
   const [products, setProducts] = useState([]);
   const [productList, setProductList] = useState(products);
   useEffect(() => {
-    fetch("http://localhost:8082/api/getCompanyProducts") // Adjust API URL
+    fetch("http://localhost:8152/api/getCompanyProducts") // Adjust API URL
       .then((response) => response.json())
       .then((data) => {
         setProducts(data);
@@ -51,17 +51,15 @@ const ProductList = () => {
 
   return (
     <div className="container my-4">
-    <h3 className="mb-4 text-center text-primary">Products You May Like</h3>
-    <div className="row g-4">
-      {productList.map((product, index) => (
-        <div className="col-12 col-sm-6 col-md-4 col-lg-3" key={index}>
-          <ProductCard product={product} />
-        </div>
-      ))}
+      <h3 className="mb-4 text-center text-primary">Products You May Like</h3>
+      <div className="row g-4">
+        {productList.map((product, index) => (
+          <div className="col-12 col-sm-6 col-md-4 col-lg-3" key={index}>
+            <ProductCard product={product} />
+          </div>
+        ))}
+      </div>
     </div>
-  </div>
-  
-  
   );
 };
 
