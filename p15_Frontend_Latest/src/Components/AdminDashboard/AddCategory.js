@@ -3,16 +3,14 @@ import React, { useState } from "react";
 
 export default function AddCategory() {
   let category = {
-    cname: "",
+    cat_name: "",
   };
   const [categoryData, setCategoryData] = useState(category);
 
   const handleSubmit = () => {
+    console.log("categoryData", categoryData);
     axios
       .post("http://localhost:8152/Category/api/saveCategory", categoryData)
-      .then((response) => {
-        return response.json();
-      })
       .then((data) => console.log("save category is ", data))
       .catch((error) => {
         console.error(
@@ -26,14 +24,14 @@ export default function AddCategory() {
       <div className="container mt-3">
         <div className="container-fluid">
           <div className="mb-3">
-            <label htmlFor="cname" className="form-label">
+            <label htmlFor="cat_name" className="form-label">
               Category
             </label>
             <input
               type="text"
               className="form-control"
-              id="cname"
-              name="cname"
+              id="cat_name"
+              name="cat_name"
               placeholder="Enter category"
               onChange={(e) => {
                 let name = e.target.name;
