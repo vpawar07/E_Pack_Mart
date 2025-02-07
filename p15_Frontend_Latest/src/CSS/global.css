@@ -1,0 +1,160 @@
+/* Global Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Roboto', sans-serif, Arial, Helvetica;
+}
+
+/* Root Variables for Consistent Styling */
+:root {
+  --primary-color: #2c3e50; /* Dark blue for headings and important text */
+  --secondary-color: #34495e; /* Slightly lighter blue for secondary text */
+  --accent-color: #e67e22; /* Orange for accents and buttons */
+  --background-color: #f4f4f4; /* Light gray for background */
+  --text-color: #333; /* Dark gray for body text */
+  --font-family: 'Roboto', sans-serif; /* Modern and professional font */
+  --font-size-base: 16px; /* Base font size */
+  --line-height-base: 1.6; /* Base line height */
+}
+
+/* Body Styling */
+body {
+  font-family: var(--font-family);
+  font-size: var(--font-size-base);
+  line-height: var(--line-height-base);
+  color: var(--text-color);
+  background-color: var(--background-color);
+}
+
+/* Headings */
+h1, h2, h3, h4, h5, h6 {
+  color: var(--primary-color);
+  font-weight: 600; /* Semi-bold for headings */
+  margin-bottom: 1rem; /* Spacing below headings */
+}
+
+h1 {
+  font-size: 2.5rem; /* 40px */
+}
+
+h2 {
+  font-size: 2rem; /* 32px */
+}
+
+h3 {
+  font-size: 1.75rem; /* 28px */
+}
+
+h4 {
+  font-size: 1.5rem; /* 24px */
+}
+
+h5 {
+  font-size: 1.25rem; /* 20px */
+}
+
+h6 {
+  font-size: 1rem; /* 16px */
+}
+
+/* Paragraphs */
+p {
+  color: var(--text-color);
+  margin-bottom: 1rem; /* Spacing below paragraphs */
+}
+
+/* Links */
+a {
+  color: var(--accent-color);
+  text-decoration: none; /* Remove underline */
+  transition: color 0.3s ease; /* Smooth color transition */
+}
+
+a:hover {
+  color: var(--primary-color); /* Change color on hover */
+}
+
+/* Buttons */
+button {
+  background-color: var(--accent-color);
+  color: white;
+  border: none;
+  padding: 0.75rem 1.5rem;
+  font-size: 1rem;
+  font-weight: 500;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: var(--primary-color); /* Darker color on hover */
+}
+
+/* Lists */
+ul, ol {
+  margin-bottom: 1rem;
+  padding-left: 1.5rem;
+}
+
+li {
+  margin-bottom: 0.5rem;
+}
+
+/* Forms */
+input, textarea, select {
+  font-family: var(--font-family);
+  font-size: 1rem;
+  padding: 0.5rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  width: 100%;
+  margin-bottom: 1rem;
+}
+
+input:focus, textarea:focus, select:focus {
+  border-color: var(--accent-color);
+  outline: none;
+}
+
+/* Container for Centered Content */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+/* Utility Classes */
+.text-center {
+  text-align: center;
+}
+
+.text-primary {
+  color: var(--primary-color);
+}
+
+.text-secondary {
+  color: var(--secondary-color);
+}
+
+.text-accent {
+  color: var(--accent-color);
+}
+
+.bg-primary {
+  background-color: var(--primary-color);
+}
+
+.bg-secondary {
+  background-color: var(--secondary-color);
+}
+
+.bg-accent {
+  background-color: var(--accent-color);
+}
+
+.mt-1 { margin-top: 1rem; }
+.mb-1 { margin-bottom: 1rem; }
+.mt-2 { margin-top: 2rem; }
+.mb-2 { margin-bottom: 2rem; }
