@@ -76,9 +76,10 @@ const Header = () => {
                       </li>
                       <li>
                         <a className="nav-link" href="#linkedin">
-                          LinkedIn
+                          LinkedIn...
                         </a>
                       </li>
+                      
                     </ul>
                   </div>
 
@@ -88,7 +89,7 @@ const Header = () => {
                     <ul className="list-unstyled">
                       <li>
                         <a className="nav-link" href="#tracking">
-                          Packaging Tracking
+                          Packaging Tracking..
                         </a>
                       </li>
                       <li>
