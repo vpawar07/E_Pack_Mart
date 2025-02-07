@@ -36,7 +36,7 @@ public class CatagoryController {
 	
 	@PostMapping("/saveCategory")
 	public Category save(@RequestBody Category category) {
-		
+		System.out.println(category.getCat_name());
 		return catrepo.save(category);
 	}
 	

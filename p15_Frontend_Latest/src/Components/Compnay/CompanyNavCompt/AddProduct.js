@@ -25,14 +25,14 @@ const ProductForm = () => {
   });
 
   useEffect(() => {
-    fetch("http://localhost:8082/getAllCategories")
+    fetch("http://localhost:8152/getAllCategories")
       .then((response) => response.json())
       .then((data) => setCategories(data))
       .catch((error) => console.error("Error fetching categories:", error));
   }, []);
 
   const handleCategoryChange = (e) => {
-    fetch(`http://localhost:8082/getAllProducts`)
+    fetch(`http://localhost:8152/getAllProducts`)
       .then((response) => response.json())
       .then((data) => setProducts(data))
       .catch((error) => console.error("Error fetching products:", error));
@@ -69,7 +69,7 @@ const ProductForm = () => {
     formData.append("file", file);
 
     try {
-      const response = await fetch("http://localhost:8082/api/uploadImage", {
+      const response = await fetch("http://localhost:8152/api/uploadImage", {
         method: "POST",
         body: formData,
       });
@@ -101,7 +101,7 @@ const ProductForm = () => {
 
     try {
       const response = await fetch(
-        "http://localhost:8082/api/saveCompanyProducts",
+        "http://localhost:8152/api/saveCompanyProducts",
         {
           method: "POST",
           headers: {
