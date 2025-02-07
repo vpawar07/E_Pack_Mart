@@ -16,8 +16,11 @@ import CustomerDash from "./Components/Customer/CustomerDashboard/CustomerDash";
 import { useSelector } from "react-redux";
 import { useDispatch } from "react-redux";
 import { Edit } from "./Components/Redux/slice";
+<<<<<<< HEAD
 import Header from "./Components/Header";
 import SignInSignUpBtn from "./Components/ReusableComponent/SignInSignUp_btn";
+=======
+>>>>>>> 15f1280bebeebd8753eef92c627eaee6a649f1be
 
 const App = () => {
   let [isModel, setModel] = useState(false);
@@ -61,6 +64,10 @@ const App = () => {
             >
               Close
             </button>
+<<<<<<< HEAD
+=======
+            
+>>>>>>> 15f1280bebeebd8753eef92c627eaee6a649f1be
           </div>
         </div>
       )}
@@ -79,8 +86,11 @@ const App = () => {
         <Route path="/adminDashboard" element={<AdminDashboard />} />
         <Route path="/customerDashboard" element={<CustomerDash />} />
       </Routes>
+<<<<<<< HEAD
       <SignInSignUpBtn />
       <Header />
+=======
+>>>>>>> 15f1280bebeebd8753eef92c627eaee6a649f1be
     </div>
   );
 };
