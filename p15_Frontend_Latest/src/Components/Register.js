@@ -21,7 +21,7 @@ export default function Register() {
       });
   };
   const getCityData = () => {
-    fetch("http://localhost:8082/getAllCity")
+    fetch("http://localhost:8152/getAllCity")
       .then((res) => {
         if (!res.ok) {
           throw new Error(`HTTP Error ${res.status}`);
@@ -38,7 +38,7 @@ export default function Register() {
   };
 
   const checkEmail = (e) => {
-    fetch("http://localhost:8082/checkEmail?email=" + e.target.value)
+    fetch("http://localhost:8152/checkEmail?email=" + e.target.value)
       .then((res) => {
         if (!res.ok) {
           console.log("res not ok : response.status : " + res.status);
@@ -49,7 +49,7 @@ export default function Register() {
       .catch((err) => console.log("Error : ", err));
   };
   const checkPancard = (e) => {
-    fetch("http://localhost:8082/checkPancard?pancard=" + e.target.value)
+    fetch("http://localhost:8152/checkPancard?pancard=" + e.target.value)
       .then((res) => {
         if (!res.ok) {
           console.log("res not ok : response.status : " + res.status);
@@ -59,7 +59,7 @@ export default function Register() {
       .catch((err) => console.log("Error : ", err));
   };
   const checkGST = (e) => {
-    fetch("http://localhost:8082/checkEmail?gst_no=" + e.target.value)
+    fetch("http://localhost:8152/checkEmail?gst_no=" + e.target.value)
       .then((res) => {
         if (!res.ok) {
           console.log("res not ok : response.status : " + res.status);
@@ -69,7 +69,7 @@ export default function Register() {
       .catch((err) => console.log("Error : ", err));
   };
   const checkMSME = (e) => {
-    fetch("http://localhost:8082/checkEmail?msme_cert_no=" + e.target.value)
+    fetch("http://localhost:8152/checkEmail?msme_cert_no=" + e.target.value)
       .then((res) => {
         if (!res.ok) {
           console.log("res not ok : response.status : " + res.status);
@@ -321,7 +321,7 @@ export default function Register() {
       if (userData.role_id.role_id == 2) {
         console.log("inside compnay", userData.role_id.role_id);
 
-        fetch("http://localhost:8082/saveCompany", userInfo)
+        fetch("http://localhost:8152/saveCompany", userInfo)
           .then((res) => {
             if (res.ok) {
               console.log("Register successfully");
@@ -335,7 +335,7 @@ export default function Register() {
       } else if (userData.role_id.role_id == 3) {
         console.log("inside customer", userData.role_id.role_id);
 
-        fetch("http://localhost:8082/saveUser", userInfo)
+        fetch("http://localhost:8152/saveUser", userInfo)
           .then((res) => {
             if (res.ok) {
               navigate("/login");
