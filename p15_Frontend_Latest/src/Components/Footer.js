@@ -11,6 +11,7 @@ const Header = () => {
           backgroundColor: "grey",
           textAlign: "center",
           padding: "10px",
+         
         }}
       >
         <a href="#top" style={{ margin: "10" }}>
@@ -79,7 +80,6 @@ const Header = () => {
                           LinkedIn...
                         </a>
                       </li>
-                      
                     </ul>
                   </div>
 

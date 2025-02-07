@@ -51,7 +51,7 @@ const AdminNavbar = () => {
               </NavLink>
             </li>
             <li className="nav-item">
-              <NavLink className="nav-link" to="/manage-categories">
+              <NavLink className="nav-link" to="/manage-category">
                 Manage Categories
               </NavLink>
             </li>
