@@ -16,7 +16,7 @@ import CustomerDash from "./Components/Customer/CustomerDashboard/CustomerDash";
 import { useSelector } from "react-redux";
 import { useDispatch } from "react-redux";
 import { Edit } from "./Components/Redux/slice";
-import Header from "./Components/Header";
+import Header from "./Components/Footer";
 import SignInSignUpBtn from "./Components/ReusableComponent/SignInSignUp_btn";
 
 const App = () => {
