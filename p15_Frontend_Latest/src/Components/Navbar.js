@@ -5,6 +5,8 @@ import { Link, useNavigate } from "react-router-dom";
 import ComNavbar from "./Compnay/CompanyDashboard/ComNavbar";
 import AdminNavbar from "./AdminDashboard/AdminNavbar";
 import Menu from "./Menu/Menu";
+import pic from "../Images/Logo.JPG";
+import SignInSignUpBtn from "./ReusableComponent/SignInSignUp_btn";
 
 // name: "logged",
 
@@ -63,17 +65,17 @@ const Navbar = () => {
   return (
     <>
       {/* {isLoggedIn && data.role_id.role_type != 1 &&  */}
-      <nav className="navbar navbar-expand-lg navbar-dark bg-primary">
+      <nav className="navbar navbar-expand-lg navbar-dark bg-primary ">
         <div className="container-fluid">
           {/* Logo */}
           <Link className="navbar-brand d-flex align-items-center" to={pathh}>
             <img
-              src="https://via.placeholder.com/50" // Replace with your actual logo URL
+              src={pic} // Replace with your actual logo URL
               alt="Epackmart"
               id="top"
-              style={{ height: "40px", marginRight: "10px" }}
+              style={{ height: "80px", marginRight: "1px" }}
             />
-            Epackmart
+            {/* Epackmart */}
           </Link>
           <div
             className="collapse navbar-collapse"
@@ -120,6 +122,7 @@ const Navbar = () => {
                       Login
                     </Link>
                   </li>
+                 
                 </>
               ) : (
                 <>

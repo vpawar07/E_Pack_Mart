@@ -6,10 +6,10 @@ const AdminNavbar = () => {
   const adminData = useSelector((state) => state.logged.data);
 
   return (
-    <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
+    // <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
+    <nav className="navbar navbar-expand-lg ">
       <div className="container-fluid">
-        {/* Logo and Admin Name */}
-        <a className="navbar-brand" href="/">
+        {/* <a className="navbar-brand" href="/">
           <img
             src="https://via.placeholder.com/40"
             alt="Admin Logo"
@@ -18,8 +18,6 @@ const AdminNavbar = () => {
           />
           <span>{adminData.name}</span>
         </a>
-
-        {/* Collapsible menu button for smaller screens */}
         <button
           className="navbar-toggler"
           type="button"
@@ -30,7 +28,7 @@ const AdminNavbar = () => {
           aria-label="Toggle navigation"
         >
           <span className="navbar-toggler-icon"></span>
-        </button>
+        </button> */}
 
         {/* Navbar Links */}
         <div className="collapse navbar-collapse" id="adminNavbarContent">

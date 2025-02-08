@@ -86,7 +86,7 @@ const App = () => {
         <Route path="/add-product" element={<AddProductType />} />
       </Routes>
 
-      <SignInSignUpBtn />
+      {/* <SignInSignUpBtn /> */}
       <Header />
     </div>
   );
