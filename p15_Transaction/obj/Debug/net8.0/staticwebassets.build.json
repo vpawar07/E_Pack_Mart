@@ -1,11 +1,12 @@
 {
   "Version": 1,
-  "Hash": "Xxii7Jrj9eop1zaRHNM/HCj19FctvQ6osfEUnbZD2NA=",
+  "Hash": "JS8XOt9vyu+ozwEzS+UAce9eOQ4L4Yygm0AMf7zu2Gw=",
   "Source": "p15_Transaction",
   "BasePath": "_content/p15_Transaction",
   "Mode": "Default",
   "ManifestType": "Build",
   "ReferencedProjectsConfiguration": [],
   "DiscoveryPatterns": [],
-  "Assets": []
+  "Assets": [],
+  "Endpoints": []
 }

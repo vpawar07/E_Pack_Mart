@@ -19,7 +19,7 @@ namespace p15_Transaction.Controllers
         {
             try
             {
-                return Ok(Db.PaymentMethods);
+                return Ok(Db.PaymentMethods.ToList());
             }
             catch (Exception ex)
             {
