@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\VISHAL\\Desktop\\DotNet_MyProject\\p15_Transaction\\p15_Transaction.csproj": {}
+    "C:\\Users\\VISHAL\\Documents\\GitHub\\E_Pack_Mart\\p15_Transaction\\p15_Transaction.csproj": {}
   },
   "projects": {
-    "C:\\Users\\VISHAL\\Desktop\\DotNet_MyProject\\p15_Transaction\\p15_Transaction.csproj": {
+    "C:\\Users\\VISHAL\\Documents\\GitHub\\E_Pack_Mart\\p15_Transaction\\p15_Transaction.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\VISHAL\\Desktop\\DotNet_MyProject\\p15_Transaction\\p15_Transaction.csproj",
+        "projectUniqueName": "C:\\Users\\VISHAL\\Documents\\GitHub\\E_Pack_Mart\\p15_Transaction\\p15_Transaction.csproj",
         "projectName": "p15_Transaction",
-        "projectPath": "C:\\Users\\VISHAL\\Desktop\\DotNet_MyProject\\p15_Transaction\\p15_Transaction.csproj",
+        "projectPath": "C:\\Users\\VISHAL\\Documents\\GitHub\\E_Pack_Mart\\p15_Transaction\\p15_Transaction.csproj",
         "packagesPath": "C:\\Users\\VISHAL\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\VISHAL\\Desktop\\DotNet_MyProject\\p15_Transaction\\obj\\",
+        "outputPath": "C:\\Users\\VISHAL\\Documents\\GitHub\\E_Pack_Mart\\p15_Transaction\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\VISHAL\\AppData\\Roaming\\NuGet\\NuGet.Config",

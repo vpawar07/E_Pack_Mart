@@ -15,7 +15,7 @@ namespace p15_Transaction.Models
         public string GstNo { get; set; } = null!;
         public int UserId { get; set; }
 
-        public virtual User User { get; set; } = null!;
+        public virtual User? User { get; set; } = null!;
         public virtual ICollection<CompanyProduct> CompanyProducts { get; set; }
     }
 }
