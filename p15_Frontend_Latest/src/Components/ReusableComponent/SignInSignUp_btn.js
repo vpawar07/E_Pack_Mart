@@ -1,11 +1,17 @@
 import React from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { Button, Card } from "react-bootstrap";
+import { useSelector } from "react-redux";
+// import{isLoggedIn} from
 
 export default function SignInSignUpBtn() {
+  // const { isLoggedIn } = useSelector((state) => state.logged);
+  const{isLoggedIn}=useSelector((state)=>state.logged);
   const navigate = useNavigate();
 
   return (
+    <>
+    {!isLoggedIn && (
     <Card
       className="text-center p-3 mx-auto"
       style={{ width: "300px", marginTop: "200px" }}
@@ -25,6 +31,9 @@ export default function SignInSignUpBtn() {
           </Link>
         </span>
       </div>
-    </Card>
+    </Card>)
+  }
+  <h1>hi</h1>
+  </>
   );
 }

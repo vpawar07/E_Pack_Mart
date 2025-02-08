@@ -11,7 +11,7 @@ const ProductList = () => {
       .then((data) => {
         setProducts(data);
         setProductList(data);
-      })
+      })  
       .catch((error) => console.error("Error fetching products:", error));
   }, []);
 
