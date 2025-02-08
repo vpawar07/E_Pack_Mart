@@ -6,7 +6,7 @@ using p15_Transaction.DTOs;
 
 namespace p15_Transaction.Controllers
 {
-    [Route("api/[controller]/[Action]")]
+    [Route("api/[controller]")]
     [ApiController]
     public class CartController : ControllerBase
     {
@@ -85,7 +85,7 @@ namespace p15_Transaction.Controllers
         }
 
 
-        [HttpPost]
+        [HttpPost("paymentOrder")]
         public IActionResult paymentOrder(OrderPayment obj)
         {
             Console.WriteLine("Payment called");

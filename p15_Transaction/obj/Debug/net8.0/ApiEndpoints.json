@@ -1,8 +1,18 @@
 [
   {
     "ContainingType": "p15_Transaction.Controllers.CartController",
+    "Method": "GetAllCart",
+    "RelativePath": "api/Cart",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "p15_Transaction.Controllers.CartController",
     "Method": "AddToCart",
-    "RelativePath": "api/Cart/AddToCart/AddToCart",
+    "RelativePath": "api/Cart/AddToCart",
     "HttpMethod": "POST",
     "IsController": true,
     "Order": 0,
@@ -17,18 +27,8 @@
   },
   {
     "ContainingType": "p15_Transaction.Controllers.CartController",
-    "Method": "GetAllCart",
-    "RelativePath": "api/Cart/GetAllCart",
-    "HttpMethod": "GET",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [],
-    "ReturnTypes": []
-  },
-  {
-    "ContainingType": "p15_Transaction.Controllers.CartController",
     "Method": "getMyCart",
-    "RelativePath": "api/Cart/getMyCart/getMyCart",
+    "RelativePath": "api/Cart/getMyCart",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
@@ -60,7 +60,7 @@
   {
     "ContainingType": "p15_Transaction.Controllers.CartController",
     "Method": "removeCartProduct",
-    "RelativePath": "api/Cart/removeCartProduct/removeCartProduct/{id}",
+    "RelativePath": "api/Cart/removeCartProduct/{id}",
     "HttpMethod": "DELETE",
     "IsController": true,
     "Order": 0,
