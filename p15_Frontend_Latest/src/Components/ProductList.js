@@ -6,7 +6,7 @@ const ProductList = () => {
   const [products, setProducts] = useState([]);
   const [productList, setProductList] = useState(products);
   useEffect(() => {
-    fetch("http://localhost:8082/api/getCompanyProducts") // Adjust API URL
+    fetch("http://localhost:8152/api/getCompanyProducts") // Adjust API URL
       .then((response) => response.json())
       .then((data) => {
         setProducts(data);
@@ -16,10 +16,10 @@ const ProductList = () => {
   }, []);
 
   console.log("Products arare , ", products);
-  let dispro = products.filter((val) => {
-    return val.compProdId == 52;
-  });
-  console.log("dispro : ", dispro);
+  // let dispro = products.filter((val) => {
+  //   return val.compProdId == 52;
+  // });
+  // console.log("dispro : ", dispro);
 
   const searchData = useSelector((state) => state.logged.searchData);
 
