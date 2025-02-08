@@ -53,7 +53,7 @@ public class CompanyProductController {
             Files.copy(file.getInputStream(), filePath, StandardCopyOption.REPLACE_EXISTING);
 
             // ✅ Return accessible image path
-            String imageUrl = "http://localhost:8082/AssetImage/" + fileName;
+            String imageUrl = "http://localhost:8152/AssetImage/" + fileName;
             return ResponseEntity.ok(imageUrl);
         } catch (IOException e) {
             e.printStackTrace();

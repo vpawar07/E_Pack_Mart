@@ -92,7 +92,7 @@ const App = () => {
         <Route path="/payment" element={<Payment/>}/>
       </Routes>
 
-      <SignInSignUpBtn />
+      {/* <SignInSignUpBtn /> */}
       <Header />
     </div>
   );
