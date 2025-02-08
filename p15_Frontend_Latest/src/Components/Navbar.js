@@ -17,19 +17,15 @@ import SignInSignUpBtn from "./ReusableComponent/SignInSignUp_btn";
 //     toggle: false,
 //   },
 
-
-
 const Navbar = () => {
   const { isLoggedIn, data, toggle } = useSelector((state) => state.logged);
   const dispatch = useDispatch();
   const navigate = useNavigate();
 
-
-  const handleMyCart=()=>{
+  const handleMyCart = () => {
     navigate("/myCart");
-  }
+  };
 
-  
   // Handle logout
   const handleLogout = () => {
     dispatch(logout({}));
@@ -111,9 +107,10 @@ const Navbar = () => {
 
                   <li className="nav-item">
                     <button
-                    className="btn btn-outline-light nav-link"
-                    onClick={handleMyCart}
-                    >My Cart
+                      className="btn btn-outline-light nav-link"
+                      onClick={handleMyCart}
+                    >
+                      My Cart
                     </button>
                   </li>
                 </>
@@ -134,7 +131,6 @@ const Navbar = () => {
                       Login
                     </Link>
                   </li>
-                 
                 </>
               ) : (
                 <>
