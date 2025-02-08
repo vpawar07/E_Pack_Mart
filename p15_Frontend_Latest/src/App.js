@@ -18,9 +18,9 @@ import { useDispatch } from "react-redux";
 import { Edit } from "./Components/Redux/slice";
 import Header from "./Components/Footer";
 import SignInSignUpBtn from "./Components/ReusableComponent/SignInSignUp_btn";
-import Cart from "./Components/Customer/CustomerDashboard/MyCart";
-import Payment from "./Components/Customer/CustomerDashboard/Payment";
-
+import AddCategory from "./Components/AdminDashboard/AddCategory";
+import ManageCategory from "./Components/AdminDashboard/ManageCategory";
+import AddProductType from "./Components/AdminDashboard/AddProductyType";
 
 const App = () => {
   let [isModel, setModel] = useState(false);
@@ -81,8 +81,9 @@ const App = () => {
         <Route path="/companyDashboard" element={<CompanyDashboard />} />
         <Route path="/adminDashboard" element={<AdminDashboard />} />
         <Route path="/customerDashboard" element={<CustomerDash />} />
-        <Route path="/myCart" element={<Cart/>}/>
-        <Route path="/payment" element={<Payment/>}/>
+        <Route path="/manage-category" element={<ManageCategory />} />
+        <Route path="/add-category" element={<AddCategory />} />
+        <Route path="/add-product" element={<AddProductType />} />
       </Routes>
 
       <SignInSignUpBtn />
