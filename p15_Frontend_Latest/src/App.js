@@ -22,6 +22,9 @@ import AddCategory from "./Components/AdminDashboard/AddCategory";
 import ManageCategory from "./Components/AdminDashboard/ManageCategory";
 import AddProductType from "./Components/AdminDashboard/AddProductyType";
 
+import Cart from "./Components/Customer/CustomerDashboard/MyCart";
+import Payment from "./Components/Customer/CustomerDashboard/Payment";
+
 const App = () => {
   let [isModel, setModel] = useState(false);
   let { isEdit } = useSelector((state) => state.logged);
@@ -84,6 +87,9 @@ const App = () => {
         <Route path="/manage-category" element={<ManageCategory />} />
         <Route path="/add-category" element={<AddCategory />} />
         <Route path="/add-product" element={<AddProductType />} />
+
+        <Route path="/myCart" element={<Cart/>}/>
+        <Route path="/payment" element={<Payment/>}/>
       </Routes>
 
       <SignInSignUpBtn />
