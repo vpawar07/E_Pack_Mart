@@ -1,0 +1,6 @@
+@p15_Transaction_HostAddress = http://localhost:5234
+
+GET {{p15_Transaction_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###

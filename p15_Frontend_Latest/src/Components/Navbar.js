@@ -15,11 +15,19 @@ import Menu from "./Menu/Menu";
 //     toggle: false,
 //   },
 
+
+
 const Navbar = () => {
   const { isLoggedIn, data, toggle } = useSelector((state) => state.logged);
   const dispatch = useDispatch();
   const navigate = useNavigate();
 
+
+  const handleMyCart=()=>{
+    navigate("/myCart");
+  }
+
+  
   // Handle logout
   const handleLogout = () => {
     dispatch(logout({}));
@@ -100,7 +108,11 @@ const Navbar = () => {
                   </li>
 
                   <li className="nav-item">
-                    <button className="btn btn-outline-light ms-2">Cart</button>
+                    <button
+                    className="btn btn-outline-light nav-link"
+                    onClick={handleMyCart}
+                    >My Cart
+                    </button>
                   </li>
                 </>
               ) : null}

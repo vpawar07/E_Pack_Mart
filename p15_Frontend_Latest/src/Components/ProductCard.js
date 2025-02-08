@@ -1,41 +1,52 @@
-import React from "react";
-
-// const ProductCard = ({ product }) => {
-//   return (
-//     <div className="col-lg-3 col-md-6 col-sm-12 mb-4">
-//       <div className="card h-100">
-//         <img
-//           src={product.image}
-//           className="card-img-top"
-//           alt={product.name}
-//           style={{ height: "150px", objectFit: "cover" }}
-//         />
-//         <div className="card-body">
-//           <h5 className="card-title" style={{ fontSize: "16px" }}>
-//             {product.name}
-//           </h5>
-//           <p className="card-text">
-//             <small>{product.company}</small>
-//             <br />
-//             <small>{product.location}</small>
-//           </p>
-//           <p className="card-text text-primary fw-bold">₹ {product.price}</p>
-//         </div>
-//         <div className="card-footer text-center">
-//           <button className="btn btn-outline-primary w-100 mb-2">
-//             View Number
-//           </button>
-//           <button className="btn btn-primary w-100">Get Best Price</button>
-//         </div>
-//       </div>
-//     </div>
-//   );
-// };
-
 // import React from "react";
+import React, { useEffect, useState } from "react";
+import { useSelector } from "react-redux";
+import "./ProductList.css";
 
 const ProductCard = ({ product }) => {
+
+  console.log("this product",product);
+  const { data } = useSelector((state) => state.logged);
+
   // console.log(product?.prodImage ?? null);
+  const [cartPopup, setCartPopup] = useState(null);
+  const [quantity, setQuantity] = useState(1);
+console.log("popup",cartPopup);
+
+
+  const handleAddToCart = () => {
+    const cartItem = {
+      userId: data.user_id,
+      compProdId: cartPopup.compProdId,
+      quantity: quantity,
+      cartStatus: true
+    };
+    console.log(cartItem);
+  
+    fetch("https://localhost:7182/api/Cart/AddToCart", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(cartItem),
+    })
+      .then(async (response) => {
+        if (!response.ok) {
+          const errorData = await response.json();
+          throw new Error(errorData?.message || "Failed to add to cart");
+        }
+        return response.json();
+      })
+      .then((data) => {
+        console.log("Success:", data);
+        alert("Product added to cart successfully!");
+        setCartPopup(null);
+        setQuantity(1);
+      })
+      .catch((error) => {
+        console.error("Error:", error);
+        alert("Failed to add to cart");
+      });
+  };
+  
   return (
     <div className="card shadow-lg border border-light rounded p-3 mb-4">
       <img
@@ -73,11 +84,37 @@ const ProductCard = ({ product }) => {
           </li>
         </ul>
         <div className="mt-auto">
-          <button className="btn btn-primary w-100 mt-2 shadow-sm border-0 rounded">
+          <button className="btn btn-primary w-100 mt-2 shadow-sm border-0 rounded"
+          onClick={(e) => {
+            e.stopPropagation();
+            setCartPopup(product);
+          }}
+          >
             Add to Cart
           </button>
         </div>
       </div>
+
+
+      {cartPopup && (
+        <div className="product-popup-overlay" onClick={() => setCartPopup(null)}>
+          <div className="product-popup" onClick={(e) => e.stopPropagation()}>
+            <h4 className="fw-bold">{cartPopup.product.product_name || "No Name"}</h4>
+            <p className="text-success fw-bold">Price per unit: ₹{cartPopup.prodPrice}</p>
+            <div className="d-flex align-items-center justify-content-between">
+              <button className="btn btn-secondary" onClick={() => setQuantity(Math.max(1, quantity - 1))}>-</button>
+              <span className="fw-bold mx-3">{quantity}</span>
+              <button className="btn btn-secondary" onClick={() => setQuantity(quantity + 1)}>+</button>
+            </div>
+            <p className="mt-2 text-danger fw-bold">Total Price: ₹{cartPopup.prodPrice * quantity}</p>
+            <button className="btn btn-primary mt-3" onClick={handleAddToCart}>Add</button>
+            <button className="btn btn-secondary mt-3 ms-2" onClick={() => setCartPopup(null)}>Cancel</button>
+          </div>
+        </div>
+      )}
+
+
+
     </div>
   );
 };

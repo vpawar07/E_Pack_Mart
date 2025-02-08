@@ -16,10 +16,10 @@ const ProductList = () => {
   }, []);
 
   console.log("Products arare , ", products);
-  let dispro = products.filter((val) => {
-    return val.compProdId == 52;
-  });
-  console.log("dispro : ", dispro);
+  // let dispro = products.filter((val) => {
+  //   return val.compProdId == 52;
+  // });
+  // console.log("dispro : ", dispro);
 
   const searchData = useSelector((state) => state.logged.searchData);
 
