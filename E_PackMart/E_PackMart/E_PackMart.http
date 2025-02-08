@@ -1,6 +1,0 @@
-@E_PackMart_HostAddress = http://localhost:5194
-
-GET {{E_PackMart_HostAddress}}/weatherforecast/
-Accept: application/json
-
-###
