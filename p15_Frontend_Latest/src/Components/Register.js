@@ -8,7 +8,7 @@ export default function Register() {
     3: "Customer",
   };
   const getStateData = () => {
-    fetch("http://localhost:8152/getAllStates")
+    fetch("http://localhost:8153/getAllStates")
       .then((res) => {
         if (!res.ok) {
           throw new Error(`Http Error,${res.status}`);
@@ -21,7 +21,7 @@ export default function Register() {
       });
   };
   const getCityData = () => {
-    fetch("http://localhost:8152/getAllCity")
+    fetch("http://localhost:8153/getAllCity")
       .then((res) => {
         if (!res.ok) {
           throw new Error(`HTTP Error ${res.status}`);
