@@ -23,7 +23,7 @@ console.log("popup",cartPopup);
     };
     console.log(cartItem);
   
-    fetch("https://localhost:7182/api/Cart/AddToCart", {
+    fetch("https://localhost:9154/api/Cart/AddToCart", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(cartItem),

@@ -10,7 +10,7 @@ export default function AddCategory() {
   const handleSubmit = () => {
     console.log("categoryData", categoryData);
     axios
-      .post("http://localhost:8152/Category/api/saveCategory", categoryData)
+      .post("http://localhost:8153/Category/api/saveCategory", categoryData)
       .then((data) => console.log("save category is ", data))
       .catch((error) => {
         console.error(
