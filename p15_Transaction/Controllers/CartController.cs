@@ -136,5 +136,30 @@ namespace p15_Transaction.Controllers
                 return BadRequest(ex.Message);
             }
         }
+
+        [HttpGet("getHistory")]
+        public IActionResult getOrderProduct([FromQuery] int userid)
+        {
+            try
+            {
+                //var rev = await Db.Reviews
+                //    .Include(r => r.User)
+                //    .Where(r => r.CompProdId == compProdId)
+                //    .Select(r => new
+                //    {
+                //        UserName = r.User.Name,
+                //        ReviewDesc = r.ReviewDesc,
+                //        Rating = r.Rating
+                //    })
+                //    .ToListAsync();
+
+                var data = Db.Carts.Include(c => c.CompProd).Where(c => c.UserId == userid && c.CartStatus == false).Select(c => new { c.Quantity, c.CompProd }).ToList();
+                return Ok(data);
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(ex.Message);
+            }
+        }
     }
 }
