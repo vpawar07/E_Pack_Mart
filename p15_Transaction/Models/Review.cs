@@ -11,7 +11,7 @@ namespace p15_Transaction.Models
         public string? ReviewDesc { get; set; }
         public int Rating { get; set; }
 
-        public virtual CompanyProduct CompProd { get; set; } = null!;
-        public virtual User User { get; set; } = null!;
+        public virtual CompanyProduct? CompProd { get; set; } = null!;
+        public virtual User? User { get; set; } = null!;
     }
 }

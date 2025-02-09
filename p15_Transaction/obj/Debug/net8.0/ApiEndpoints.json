@@ -27,6 +27,22 @@
   },
   {
     "ContainingType": "p15_Transaction.Controllers.CartController",
+    "Method": "getOrderProduct",
+    "RelativePath": "api/Cart/getHistory",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "userid",
+        "Type": "System.Int32",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "p15_Transaction.Controllers.CartController",
     "Method": "getMyCart",
     "RelativePath": "api/Cart/getMyCart",
     "HttpMethod": "GET",
@@ -81,6 +97,38 @@
     "IsController": true,
     "Order": 0,
     "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "p15_Transaction.Controllers.ReviewController",
+    "Method": "getReviewsOfProduct",
+    "RelativePath": "api/Review/getReviews",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "compProdId",
+        "Type": "System.Int32",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "p15_Transaction.Controllers.ReviewController",
+    "Method": "takeReviews",
+    "RelativePath": "api/Review/giveReview",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "rev",
+        "Type": "p15_Transaction.Models.Review",
+        "IsRequired": true
+      }
+    ],
     "ReturnTypes": []
   },
   {

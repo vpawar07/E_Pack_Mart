@@ -26,6 +26,10 @@ const Navbar = () => {
     navigate("/myCart");
   };
 
+  const handleMyOrders =() =>{
+    navigate("/myOrders");
+  }
+
   // Handle logout
   const handleLogout = () => {
     dispatch(logout({}));
@@ -105,14 +109,7 @@ const Navbar = () => {
                     </form>
                   </li>
 
-                  <li className="nav-item">
-                    <button
-                      className="btn btn-outline-light nav-link"
-                      onClick={handleMyCart}
-                    >
-                      My Cart
-                    </button>
-                  </li>
+                  
                 </>
               ) : null}
 
@@ -135,6 +132,24 @@ const Navbar = () => {
               ) : (
                 <>
                   {compo}
+                  <li className="nav-item">
+                    <button
+                      className="btn btn-outline-light nav-link"
+                      onClick={handleMyCart}
+                    >
+                      My Cart
+                    </button>
+                  </li>
+
+                  <li className="nav-item">
+                    <button
+                      className="btn btn-outline-light nav-link"
+                      onClick={handleMyOrders}
+                    >
+                      My Orders
+                    </button>
+                  </li>
+
                   <li className="nav-item">
                     <button
                       className="btn btn-outline-light nav-link"
