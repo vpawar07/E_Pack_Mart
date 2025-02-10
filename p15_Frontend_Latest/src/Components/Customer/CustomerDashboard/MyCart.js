@@ -16,10 +16,12 @@ const Cart = () => {
   }, []);
 
   console.log("This is cart Page");
-  
+
   const fetchCartItems = async () => {
     try {
-      const response = await fetch(`https://localhost:7182/api/Cart/getMyCart?userid=${data.user_id}`);
+      const response = await fetch(
+        `https://localhost:7182/api/Cart/getMyCart?userid=${data.user_id}`
+      );
       if (!response.ok) {
         throw new Error("Failed to fetch cart items");
       }
@@ -33,24 +35,34 @@ const Cart = () => {
   };
 
   const removeItem = async (id) => {
-    const confirmDelete = window.confirm("Are you sure you want to remove this item from your cart?");
+    const confirmDelete = window.confirm(
+      "Are you sure you want to remove this item from your cart?"
+    );
     if (!confirmDelete) return;
     try {
-      const response = await fetch(`https://localhost:7182/api/Cart/removeCartProduct/${id}`, {
-        method: "DELETE",
-      });
+      const response = await fetch(
+        `https://localhost:7182/api/Cart/removeCartProduct/${id}`,
+        {
+          method: "DELETE",
+        }
+      );
 
       if (!response.ok) {
         throw new Error("Failed to remove item");
       }
 
-      setCartItems((prevItems) => prevItems.filter((item) => item.cartId !== id));
+      setCartItems((prevItems) =>
+        prevItems.filter((item) => item.cartId !== id)
+      );
     } catch (err) {
       alert(err.message);
     }
   };
 
-  const totalPrice = cartItems.reduce((acc, item) => acc + item?.compProd?.prodPrice * item.quantity, 0);
+  const totalPrice = cartItems.reduce(
+    (acc, item) => acc + item?.compProd?.prodPrice * item.quantity,
+    0
+  );
 
   const handleSelect = (id) => {
     setSelectedProducts((prevSelected) => {
@@ -70,10 +82,12 @@ const Cart = () => {
       return;
     }
     console.log(selectedProducts);
-    
-    const selectedItems = cartItems.filter((item) => selectedProducts.has(item.cartId));
+
+    const selectedItems = cartItems.filter((item) =>
+      selectedProducts.has(item.cartId)
+    );
     console.log(selectedItems);
-    
+
     navigate("/payment", { state: selectedItems });
     // onOrder(selectedItems);
   };
@@ -104,10 +118,16 @@ const Cart = () => {
               <tbody>
                 {cartItems.map((item) => (
                   <tr key={item.cartId}>
-                    <td>{item.compProd?.product?.productName || "Unknown Product"}</td>
-                    <td className="text-center">₹{item?.compProd?.prodPrice}</td>
+                    <td>
+                      {item.compProd?.product?.productName || "Unknown Product"}
+                    </td>
+                    <td className="text-center">
+                      ₹{item?.compProd?.prodPrice}
+                    </td>
                     <td className="text-center">{item.quantity}</td>
-                    <td className="text-center">₹{item?.compProd?.prodPrice * item.quantity}</td>
+                    <td className="text-center">
+                      ₹{item?.compProd?.prodPrice * item.quantity}
+                    </td>
                     <td className="text-center">
                       <button
                         onClick={() => removeItem(item.cartId)}
@@ -126,7 +146,10 @@ const Cart = () => {
             Total Amount: ₹{totalPrice}
           </div>
 
-          <button onClick={() => setShowOrderPopup(true)} className="btn btn-success btn-block">
+          <button
+            onClick={() => setShowOrderPopup(true)}
+            className="btn btn-success btn-block"
+          >
             ✅ Proceed to Order
           </button>
         </>
@@ -138,7 +161,10 @@ const Cart = () => {
             <div className="modal-content">
               <div className="modal-header">
                 <h5 className="modal-title">📦 Select Products for Order</h5>
-                <button onClick={() => setShowOrderPopup(false)} className="btn-close"></button>
+                <button
+                  onClick={() => setShowOrderPopup(false)}
+                  className="btn-close"
+                ></button>
               </div>
               <div className="modal-body">
                 {cartItems.map((item) => (
@@ -150,15 +176,25 @@ const Cart = () => {
                       className="form-check-input"
                     />
                     <label className="form-check-label">
-                      {item.compProd?.product?.productName || "Unknown Product"} - ₹{item?.compProd?.prodPrice * item.quantity}
+                      {item.compProd?.product?.productName || "Unknown Product"}{" "}
+                      - ₹{item?.compProd?.prodPrice * item.quantity}
                     </label>
                   </div>
                 ))}
               </div>
               <div className="modal-footer">
-                <div className="text-primary font-weight-bold">Total: ₹{selectedTotalPrice}</div>
-                <button onClick={() => setShowOrderPopup(false)} className="btn btn-secondary">❌ Cancel</button>
-                <button onClick={handleOrder} className="btn btn-success">✅ Confirm Order</button>
+                <div className="text-primary font-weight-bold">
+                  Total: ₹{selectedTotalPrice}
+                </div>
+                <button
+                  onClick={() => setShowOrderPopup(false)}
+                  className="btn btn-secondary"
+                >
+                  ❌ Cancel
+                </button>
+                <button onClick={handleOrder} className="btn btn-success">
+                  ✅ Confirm Order
+                </button>
               </div>
             </div>
           </div>
@@ -170,15 +206,8 @@ const Cart = () => {
 
 export default Cart;
 
-
-
-
-
-
-
 // import React, { useState } from "react";
 // import { useSelector } from "react-redux";
-
 
 // const Cart = () => {
 //     const { data } = useSelector((state) => state.logged);
