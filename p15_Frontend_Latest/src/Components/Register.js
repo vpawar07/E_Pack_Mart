@@ -8,7 +8,7 @@ export default function Register() {
     3: "Customer",
   };
   const getStateData = () => {
-    fetch("http://localhost:8153/getAllStates")
+    fetch("http://localhost:8150/api/crud/getAllStates")
       .then((res) => {
         if (!res.ok) {
           throw new Error(`Http Error,${res.status}`);
@@ -21,7 +21,7 @@ export default function Register() {
       });
   };
   const getCityData = () => {
-    fetch("http://localhost:8153/getAllCity")
+    fetch("http://localhost:8150/api/crud/getAllCity")
       .then((res) => {
         if (!res.ok) {
           throw new Error(`HTTP Error ${res.status}`);
@@ -321,7 +321,7 @@ export default function Register() {
       if (userData.role_id.role_id == 2) {
         console.log("inside compnay", userData.role_id.role_id);
 
-        fetch("http://localhost:8152/saveCompany", userInfo)
+        fetch("http://localhost:8150/api/auth/saveCompany", userInfo)
           .then((res) => {
             if (res.ok) {
               console.log("Register successfully");
@@ -335,7 +335,7 @@ export default function Register() {
       } else if (userData.role_id.role_id == 3) {
         console.log("inside customer", userData.role_id.role_id);
 
-        fetch("http://localhost:8152/saveUser", userInfo)
+        fetch("http://localhost:8150/api/auth/saveUser", userInfo)
           .then((res) => {
             if (res.ok) {
               navigate("/login");

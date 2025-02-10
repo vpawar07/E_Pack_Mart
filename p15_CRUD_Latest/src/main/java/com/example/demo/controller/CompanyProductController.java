@@ -20,7 +20,7 @@ import java.util.Optional;
 
 @CrossOrigin(origins = "http://localhost:3015")
 @RestController
-@RequestMapping("/api")
+@RequestMapping("/api/crud")
 public class CompanyProductController {
 
 	@Autowired
@@ -53,7 +53,7 @@ public class CompanyProductController {
             Files.copy(file.getInputStream(), filePath, StandardCopyOption.REPLACE_EXISTING);
 
             // ✅ Return accessible image path
-            String imageUrl = "http://localhost:8082/AssetImage/" + fileName;
+            String imageUrl = "http://localhost:8153/AssetImage/" + fileName;
             return ResponseEntity.ok(imageUrl);
         } catch (IOException e) {
             e.printStackTrace();
