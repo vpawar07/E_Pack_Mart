@@ -24,6 +24,8 @@ import AddProductType from "./Components/AdminDashboard/AddProductyType";
 
 import Cart from "./Components/Customer/CustomerDashboard/MyCart";
 import Payment from "./Components/Customer/CustomerDashboard/Payment";
+import ProductDetails from "./Components/ProductDetails";
+import MyOrders from "./Components/Customer/CustomerDashboard/MyOrders";
 
 const App = () => {
   let [isModel, setModel] = useState(false);
@@ -90,6 +92,8 @@ const App = () => {
 
         <Route path="/myCart" element={<Cart/>}/>
         <Route path="/payment" element={<Payment/>}/>
+        <Route path="/product-details" element={<ProductDetails/>} />
+        <Route path="/myOrders" element={<MyOrders/>}/>
       </Routes>
 
       {/* <SignInSignUpBtn /> */}

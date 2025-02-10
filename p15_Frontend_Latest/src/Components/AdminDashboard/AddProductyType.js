@@ -6,7 +6,7 @@ export default function AddProductyType() {
 
   useEffect(() => {
     axios
-      .get("http://localhost:8152/Category/api/getAllCategories")
+      .get("http://localhost:8153/Category/api/getAllCategories")
       .then((res) => {
         console.log("categoryResponse is ", res.data);
         setCategory(res.data);
@@ -29,7 +29,7 @@ export default function AddProductyType() {
 
   const handleSubmit = () => {
     axios
-      .post("http://localhost:8152/api/product/saveProduct", prod)
+      .post("http://localhost:8153/api/product/saveProduct", prod)
       .then((res) => {
         console.log("response.data", res.data);
       })

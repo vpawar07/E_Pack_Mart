@@ -14,7 +14,7 @@ namespace p15_Transaction.Models
         public string ProductName { get; set; } = null!;
         public int CatId { get; set; }
 
-        public virtual Category Cat { get; set; } = null!;
+        public virtual Category? Cat { get; set; } = null!;
         public virtual ICollection<CompanyProduct> CompanyProducts { get; set; }
     }
 }

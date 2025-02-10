@@ -20,7 +20,7 @@ const Cart = () => {
   const fetchCartItems = async () => {
     try {
       const response = await fetch(
-        `https://localhost:7182/api/Cart/getMyCart?userid=${data.user_id}`
+        `https://localhost:9154/api/Cart/getMyCart?userid=${data.user_id}`
       );
       if (!response.ok) {
         throw new Error("Failed to fetch cart items");
@@ -41,7 +41,7 @@ const Cart = () => {
     if (!confirmDelete) return;
     try {
       const response = await fetch(
-        `https://localhost:7182/api/Cart/removeCartProduct/${id}`,
+        `https://localhost:9154/api/Cart/removeCartProduct/${id}`,
         {
           method: "DELETE",
         }
