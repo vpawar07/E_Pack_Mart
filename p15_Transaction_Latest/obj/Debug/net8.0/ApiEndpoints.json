@@ -1,0 +1,134 @@
+[
+  {
+    "ContainingType": "p15_Transaction.Controllers.CartController",
+    "Method": "GetAllCart",
+    "RelativePath": "api/transaction/Cart",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "p15_Transaction.Controllers.CartController",
+    "Method": "AddToCart",
+    "RelativePath": "api/transaction/Cart/AddToCart",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "evnt",
+        "Type": "p15_Transaction.Models.Cart",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "p15_Transaction.Controllers.CartController",
+    "Method": "getOrderProduct",
+    "RelativePath": "api/transaction/Cart/getHistory",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "userid",
+        "Type": "System.Int32",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "p15_Transaction.Controllers.CartController",
+    "Method": "getMyCart",
+    "RelativePath": "api/transaction/Cart/getMyCart",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "userid",
+        "Type": "System.Int32",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "p15_Transaction.Controllers.CartController",
+    "Method": "paymentOrder",
+    "RelativePath": "api/transaction/Cart/paymentOrder",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "obj",
+        "Type": "p15_Transaction.DTOs.OrderPayment",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "p15_Transaction.Controllers.CartController",
+    "Method": "removeCartProduct",
+    "RelativePath": "api/transaction/Cart/removeCartProduct/{id}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "p15_Transaction.Controllers.PaymentMethodController",
+    "Method": "getPaymentMethod",
+    "RelativePath": "api/transaction/PaymentMethod/GetPaymentMethod",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "p15_Transaction.Controllers.ReviewController",
+    "Method": "getReviewsOfProduct",
+    "RelativePath": "api/transaction/Review/getReviews",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "compProdId",
+        "Type": "System.Int32",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "p15_Transaction.Controllers.ReviewController",
+    "Method": "takeReviews",
+    "RelativePath": "api/transaction/Review/giveReview",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "rev",
+        "Type": "p15_Transaction.Models.Review",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  }
+]
