@@ -10,7 +10,7 @@ const MyOrders = () => {
 
   useEffect(() => {
     if (data?.user_id) {
-      fetch(`https://localhost:9154/api/Cart/getHistory?userid=${data.user_id}`)
+      fetch(`https://localhost:8150/api/transaction/Cart/getHistory?userid=${data.user_id}`)
         .then((response) => response.json())
         .then((orderData) => {
           setOrders(orderData);
@@ -48,8 +48,7 @@ const MyOrders = () => {
       reviewDesc: review.reviewDesc,
       rating: parseInt(review.rating, 10),
     };
-
-    fetch("https://localhost:9154/api/Review/giveReview", {
+    fetch("https://localhost:8150/api/transaction/Review/giveReview", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(reviewPayload),

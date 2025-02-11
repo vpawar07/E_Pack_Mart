@@ -132,6 +132,12 @@ const Navbar = () => {
               ) : (
                 <>
                   {compo}
+
+                  {![1, 2].includes(
+                        data?.role_id?.role_id ?? data?.user_id?.role_id?.role_id
+                        ) ? 
+                  (
+                  <>
                   <li className="nav-item">
                     <button
                       className="btn btn-outline-light nav-link"
@@ -149,6 +155,7 @@ const Navbar = () => {
                       My Orders
                     </button>
                   </li>
+                  </>):null}
 
                   <li className="nav-item">
                     <button

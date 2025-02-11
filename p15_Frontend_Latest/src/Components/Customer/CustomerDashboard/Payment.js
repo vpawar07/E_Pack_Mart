@@ -22,7 +22,7 @@ const Payment = () => {
 
   const fetchPaymentMethods = async () => {
     try {
-      const response = await fetch("https://localhost:9154/api/PaymentMethod/GetPaymentMethod");
+      const response = await fetch("http://localhost:8150/api/transaction/PaymentMethod/GetPaymentMethod");
       if (!response.ok) {
         throw new Error("Failed to fetch payment methods");
       }
@@ -56,9 +56,9 @@ const Payment = () => {
     if (!confirmPayment) return;
     console.log(orderProduct);
     
-    console.log(JSON.stringify(paymentData));
+    console.log(paymentData);
     try {
-      const response = await fetch("https://localhost:9154/api/Cart/paymentOrder", {
+      const response = await fetch("http://localhost:8150/api/transaction/Cart/paymentOrder", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
