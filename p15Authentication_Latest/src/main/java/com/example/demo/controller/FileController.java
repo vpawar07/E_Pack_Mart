@@ -15,6 +15,8 @@ import java.nio.file.Paths;
 @RequestMapping("/AssetImage")
 public class FileController {
 
+    //File Controller
+    
     private final String uploadPath = "C:/Users/admin/Desktop/CDAC/Project/Folder_Java/AssetImage/";
 
     @GetMapping("/{filename:.+}")
