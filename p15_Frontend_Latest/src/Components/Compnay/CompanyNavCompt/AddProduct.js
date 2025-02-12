@@ -25,14 +25,14 @@ const ProductForm = () => {
   });
 
   useEffect(() => {
-    fetch("http://localhost:8153/Category/api/getAllCategories")
+    fetch("http://localhost:8150/api/crud/getAllCategories")
       .then((response) => response.json())
       .then((data) => setCategories(data))
       .catch((error) => console.error("Error fetching categories:", error));
   }, []);
 
   const handleCategoryChange = (e) => {
-    fetch(`http://localhost:8153/api/product/getAllProducts`)
+    fetch(`http://localhost:8150/api/crud/getAllProducts`)
       .then((response) => response.json())
       .then((data) => setProducts(data))
       .catch((error) => console.error("Error fetching products:", error));
@@ -69,7 +69,7 @@ const ProductForm = () => {
     formData.append("file", file);
 
     try {
-      const response = await fetch("http://localhost:8153/api/uploadImage", {
+      const response = await fetch("http://localhost:8150/api/crud/uploadImage", {
         method: "POST",
         body: formData,
       });
@@ -100,7 +100,7 @@ const ProductForm = () => {
 
     try {
       const response = await fetch(
-        "http://localhost:8153/api/saveCompanyProducts",
+        "http://localhost:8150/api/crud/saveCompanyProducts",
         {
           method: "POST",
           headers: {

@@ -18,7 +18,7 @@ const VendorProfile = () => {
     bankDetails: "HDFC Bank - 1234567890",
     city: "Mumbai",
     state: "Maharashtra",
-    companyAddress: "123, Industrial Area, Mumbai",
+    companyAddress: "123, Industrial Area, Mumbai"
   });
 
   useEffect(() => {

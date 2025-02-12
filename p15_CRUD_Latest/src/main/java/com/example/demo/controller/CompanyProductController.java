@@ -18,7 +18,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.Optional;
 
-@CrossOrigin(origins = "http://localhost:3015")
+//@CrossOrigin(origins = "http://localhost:3015")
 @RestController
 @RequestMapping("/api/crud")
 public class CompanyProductController {
@@ -53,7 +53,8 @@ public class CompanyProductController {
             Files.copy(file.getInputStream(), filePath, StandardCopyOption.REPLACE_EXISTING);
 
             // ✅ Return accessible image path
-            String imageUrl = "http://localhost:8153/AssetImage/" + fileName;
+            String imageUrl = "http://localhost:8153/images/" + fileName;
+//            String imageUrl = "http://localhost:8150/AssetImage/" + fileName;
             return ResponseEntity.ok(imageUrl);
         } catch (IOException e) {
             e.printStackTrace();

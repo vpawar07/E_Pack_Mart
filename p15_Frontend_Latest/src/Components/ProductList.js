@@ -6,7 +6,7 @@ const ProductList = () => {
   const [products, setProducts] = useState([]);
   const [productList, setProductList] = useState(products);
   useEffect(() => {
-    fetch("http://localhost:8153/api/crud/getCompanyProducts") // Adjust API URL
+    fetch("http://localhost:8150/api/crud/getCompanyProducts") // Adjust API URL
       .then((response) => response.json())
       .then((data) => {
         setProducts(data);

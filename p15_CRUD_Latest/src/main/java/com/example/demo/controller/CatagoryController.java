@@ -16,8 +16,8 @@ import com.example.demo.repo.CategoryRepository;
 import com.example.demo.repo.ProductRepository;
 import com.example.demo.service.CategoryService;
 
-@CrossOrigin(origins = "http://localhost:3015")
-@RequestMapping("/Category/api")
+//@CrossOrigin(origins = "http://localhost:3015")
+@RequestMapping("/api/crud")
 @RestController
 public class CatagoryController {
 
