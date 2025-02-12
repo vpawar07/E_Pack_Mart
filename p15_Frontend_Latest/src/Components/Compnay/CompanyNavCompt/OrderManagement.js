@@ -21,7 +21,7 @@ const OrderManagement = () => {
   console.log("editorder ", editOrder);
   useEffect(() => {
     fetch(
-      `http://localhost:8153/api/getCompanyWiseProducts?companyId=${data.company_id}`
+      `http://localhost:8150/api/crud/getCompanyWiseProducts?companyId=${data.company_id}`
     )
       .then((res) => res.json())
       .then((data) => {
@@ -41,7 +41,7 @@ const OrderManagement = () => {
 
     try {
       const response = await fetch(
-        `http://localhost:8153/api/deleteCompanyProduct/${compProdId}`,
+        `http://localhost:8150/api/crud/deleteCompanyProduct/${compProdId}`,
         {
           method: "DELETE",
         }
@@ -74,7 +74,7 @@ const OrderManagement = () => {
     formData.append("file", file);
 
     try {
-      const response = await fetch("http://localhost:8153/api/uploadImage", {
+      const response = await fetch("http://localhost:8150/api/crud/uploadImage", {
         method: "POST",
         body: formData,
       });
@@ -97,7 +97,7 @@ const OrderManagement = () => {
   };
 
   const handleEditOrder = (order) => {
-    dispatch(Edit());
+    // dispatch(Edit());
     let obj = {
       compProdId: order.compProdId,
       productName: order.product.product_name,
@@ -128,7 +128,7 @@ const OrderManagement = () => {
     delete obj.productName;
     axios
       .patch(
-        `http://localhost:8153/api/updateCompanyProduct/${editOrder.compProdId}`,
+        `http://localhost:8150/api/crud/updateCompanyProduct/${editOrder.compProdId}`,
         obj
       )
       .then((response) => {

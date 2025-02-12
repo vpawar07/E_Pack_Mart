@@ -122,11 +122,11 @@ const Cart = () => {
                       {item.compProd?.product?.productName || "Unknown Product"}
                     </td>
                     <td className="text-center">
-                      ₹{item?.compProd?.prodPrice}
+                      ₹{(item?.compProd?.prodPrice).toFixed(2)}
                     </td>
                     <td className="text-center">{item.quantity}</td>
                     <td className="text-center">
-                      ₹{item?.compProd?.prodPrice * item.quantity}
+                      ₹{(item?.compProd?.prodPrice * item.quantity).toFixed(2)}
                     </td>
                     <td className="text-center">
                       <button
@@ -177,14 +177,14 @@ const Cart = () => {
                     />
                     <label className="form-check-label">
                       {item.compProd?.product?.productName || "Unknown Product"}{" "}
-                      - ₹{item?.compProd?.prodPrice * item.quantity}
+                      - ₹{(item?.compProd?.prodPrice * item.quantity).toFixed(2)}
                     </label>
                   </div>
                 ))}
               </div>
               <div className="modal-footer">
                 <div className="text-primary font-weight-bold">
-                  Total: ₹{selectedTotalPrice}
+                  Total: ₹{(selectedTotalPrice).toFixed(2)}
                 </div>
                 <button
                   onClick={() => setShowOrderPopup(false)}

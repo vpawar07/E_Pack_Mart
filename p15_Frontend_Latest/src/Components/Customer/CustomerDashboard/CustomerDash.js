@@ -13,10 +13,10 @@ export default function CustomerDash() {
 
   return (
     <div>
-      {/* <ProductList /> */}
+      <ProductList />
 
       {/* <h1>This is customer dashboard</h1> */}
-      {location.pathname === "/CustomerDashboard" && <ProductList />}
+      {/* {location.pathname === "/CustomerDashboard" && <ProductList />} */}
       <Routes>
         {/* <Route path="/myCart" element={<MyCart/>} /> */}
         {/* <Route path="/myCart" element={<MyCart/>}/> */}

@@ -19,7 +19,7 @@ const ProductDetails = () => {
 
   useEffect(() => {
     if (product?.compProdId) {
-      fetch(`https://localhost:8150/api/transaction/Review/getReviews?compProdId=${product.compProdId}`)
+      fetch(`http://localhost:8150/api/transaction/Review/getReviews?compProdId=${product.compProdId}`)
         .then((response) => response.json())
         .then((data) => {
           setReviews(data.reviews);
@@ -42,7 +42,7 @@ const ProductDetails = () => {
       cartStatus: true,
     };
 
-    fetch("https://localhost:8150/api/transaction/Cart/AddToCart", {
+    fetch("http://localhost:8150/api/transaction/Cart/AddToCart", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(cartItem),
@@ -108,7 +108,7 @@ const ProductDetails = () => {
               <span style={{ color: "gold", fontSize: "20px", marginLeft: "10px" }}>
                 {"★".repeat(Math.floor(averageRating)) + "☆".repeat(5 - Math.floor(averageRating))}
               </span>
-              ({averageRating.toFixed(1)})
+              ({(averageRating || 0).toFixed(1)})
             </li>
           </ul>
           <button className="btn btn-info w-100" onClick={() => setShowReviews(!showReviews)}>
@@ -173,7 +173,7 @@ const ProductDetails = () => {
                 +
               </button>
             </div>
-            <p className="mt-2 text-danger fw-bold">Total Price: ₹{cartPopup.prodPrice * quantity}</p>
+            <p className="mt-2 text-danger fw-bold">Total Price: ₹{(cartPopup.prodPrice * quantity).toFixed(2)}</p>
             <button className="btn btn-primary mt-3" onClick={handleAddToCart}>
               Add
             </button>

@@ -11,11 +11,13 @@ import org.springframework.web.bind.annotation.RestController;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 
-@RestController
-@RequestMapping("/AssetImage")
+@RestController  //@RequestMapping("/AssetImage")
+@RequestMapping("/images")
 public class FileController {
 
-    private final String uploadPath = "C:/Users/admin/Desktop/CDAC/Project/Folder_Java/AssetImage/";
+//    private final String uploadPath = "C:/Users/admin/Desktop/CDAC/Project/Folder_Java/AssetImage/";
+	 private final String uploadPath = "C:/Users/VISHAL/Desktop/CDAC/My_Final_Project/images/";
+    
 
     @GetMapping("/{filename:.+}")
     public ResponseEntity<Resource> serveFile(@PathVariable String filename) {

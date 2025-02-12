@@ -14,8 +14,8 @@ import com.example.demo.entity.Product;
 import com.example.demo.repo.ProductRepository;
 import com.example.demo.service.ProductService;
 
-@CrossOrigin(origins = "http://localhost:3015")
-@RequestMapping("/api/product")
+//@CrossOrigin(origins = "http://localhost:3015")
+@RequestMapping("/api/crud")
 @RestController
 public class ProductController {
 

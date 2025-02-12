@@ -25,11 +25,11 @@ const ComNavbar = () => {
                 Notifications
               </NavLink>
             </li> */}
-            <li className="nav-item">
+            {/* <li className="nav-item">
               <NavLink className="nav-link" to="feedback">
                 Customer Feedback
               </NavLink>
-            </li>
+            </li> */}
             {/* <li className="nav-item">
               <NavLink className="nav-link" to="support">
                 Support

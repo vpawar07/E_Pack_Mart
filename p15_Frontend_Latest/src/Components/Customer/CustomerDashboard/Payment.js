@@ -102,8 +102,8 @@ const Payment = () => {
               <tr key={index}>
                 <td>{item?.compProd?.product?.productName}</td>
                 <td>{item.quantity}</td>
-                <td>₹{item?.compProd?.prodPrice}</td>
-                <td>₹{item?.compProd?.prodPrice * item.quantity}</td>
+                <td>₹{(item?.compProd?.prodPrice).toFixed(2)}</td>
+                <td>₹{(item?.compProd?.prodPrice * item.quantity).toFixed(2)}</td>
               </tr>
             ))}
           </tbody>
@@ -112,7 +112,7 @@ const Payment = () => {
 
       {/* Overall Total */}
       <div className="alert alert-info text-center font-weight-bold">
-        Overall Total: ₹{totalAmount}
+        Overall Total: ₹{(totalAmount).toFixed(2)}
       </div>
 
       {/* Payment Method Dropdown */}
