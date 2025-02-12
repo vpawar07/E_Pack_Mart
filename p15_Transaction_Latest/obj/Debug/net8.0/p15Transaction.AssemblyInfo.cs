@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("p15Transaction")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+d0bf016d963fc0bbac7823f22939da01235475b6")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+2693c77015a4ba3da2ce441d07aeee8a6385b551")]
 [assembly: System.Reflection.AssemblyProductAttribute("p15Transaction")]
 [assembly: System.Reflection.AssemblyTitleAttribute("p15Transaction")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
